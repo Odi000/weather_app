@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    font-size: 10px;
+}
+
+body {
+    background-image:
+        linear-gradient(rgba(0, 8, 51, 0.6), rgba(0, 8, 51, 0.6)),
+        url(./images/night_sky.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+#content {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 4rem 1rem;
+}
+
+.search-bar {
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 100%;
+    max-width: 50rem;
+    border-radius: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.4rem 1.8rem;
+    backdrop-filter: blur(2px) saturate(180%);
+}
+
+.search-bar input {
+    background-color: transparent;
+    color: #cac7ff;
+    outline: none;
+    border: none;
+    flex: 1;
+    font-size: 2rem;
+}
+
+::placeholder {
+    color: #cac7ff;
+}
+
+.search-bar button {
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: #58629b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .1s scale;
+}
+
+.search-bar img {
+    width: 70%;
+    transition: .1s scale;
+    filter: invert(86%) sepia(39%) saturate(3418%) hue-rotate(192deg) brightness(107%) contrast(105%);
+}
+
+.search-bar button:hover {
+    scale: 1.1;
+}
+
+.search-bar button:hover img {
+    scale: 0.7;
+}
+
+.search-bar button:active {
+    scale: .95;
+}

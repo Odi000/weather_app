@@ -1,3 +1,5 @@
+import './styles.css';
+import magnify from './images/magnify.svg';
 import {
     WeatherApi,
     UnitScale,
@@ -5,4 +7,6 @@ import {
     ExtractWeatherData,
 } from "./app_logic.js"
 
-console.log(WeatherApi)
+const btn = document.querySelector('button>img');
+btn.src = magnify;
+console.log()
