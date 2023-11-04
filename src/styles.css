@@ -11,6 +11,9 @@
 
 :root {
     font-size: 10px;
+    --main-txt-clr: #cac7ff;
+    --white-dim: rgba(255, 255, 255, 0.2);
+    --bkg-filter: blur(2px) saturate(180%);
 }
 
 body {
@@ -25,14 +28,20 @@ body {
 
 #content {
     width: 70%;
+    max-width: 50rem;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 4rem 1rem;
 }
 
+
+/*--------------------------------------------------/**Search Bar**/
+
 .search-bar {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--white-dim);
     width: 100%;
     max-width: 50rem;
     border-radius: 6rem;
@@ -40,20 +49,21 @@ body {
     justify-content: center;
     align-items: center;
     padding: 1.4rem 1.8rem;
-    backdrop-filter: blur(2px) saturate(180%);
+    backdrop-filter: var(--bkg-filter);
 }
 
 .search-bar input {
     background-color: transparent;
-    color: #cac7ff;
+    color: var(--main-txt-clr);
     outline: none;
     border: none;
     flex: 1;
     font-size: 2rem;
+    width: 100%;
 }
 
 ::placeholder {
-    color: #cac7ff;
+    color: var(--main-txt-clr);
 }
 
 .search-bar button {
@@ -66,6 +76,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
     transition: .1s scale;
 }
 
@@ -85,4 +96,69 @@ body {
 
 .search-bar button:active {
     scale: .95;
+}
+
+/*--------------------------------------------------/**Current State**/
+
+.current-state {
+    margin-top: 2.2rem;
+    text-align: center;
+    color: var(--main-txt-clr);
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 2.4rem;
+}
+
+.location-name {
+    font-size: 3.6rem;
+}
+
+.current-temp {
+    font-size: 7.2rem;
+    font-weight: 200;
+    line-height: 9rem;
+}
+
+/*--------------------------------------------------/**Hourly Forecast**/
+
+.hourly-forecast {
+    user-select: none;
+    display: flex;
+    color: var(--main-txt-clr);
+    text-align: center;
+    background-color: var(--white-dim);
+    backdrop-filter: var(--bkg-filter);
+    padding: 1.5rem 1.5rem 0.4rem;
+    border-radius: 1.2rem;
+    margin-top: 2.2rem;
+    width: 87.5%;
+    overflow: auto;
+}
+
+p {
+    font-size: 1.8rem;
+}
+
+.hourly-forecast img {
+    width: 4.5rem;
+}
+
+/*--------------------------------------------------/**Hourly Forecast**/
+
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0);
+    margin-block: .8rem;
+    border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    background-color: #58629b;
+    border-radius: 100vw;
 }
