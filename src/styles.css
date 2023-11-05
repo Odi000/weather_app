@@ -12,8 +12,25 @@
 :root {
     font-size: 10px;
     --main-txt-clr: #cac7ff;
+    --box-shadow-clr: rgba(202, 199, 255, 0.6);
+    --box-shadow-clr-2: rgba(202, 199, 255, 0.4);
     --white-dim: rgba(255, 255, 255, 0.2);
     --bkg-filter: blur(2px) saturate(180%);
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+    height: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #8DB8F1;
+}
+
+::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    background-color: #58629b;
+    border-radius: 100vw;
 }
 
 body {
@@ -22,8 +39,6 @@ body {
         url(./images/night_sky.jpg);
     background-position: center;
     background-size: cover;
-    width: 100vw;
-    height: 100vh;
 }
 
 #content {
@@ -145,20 +160,86 @@ p {
     width: 4.5rem;
 }
 
-/*--------------------------------------------------/**Hourly Forecast**/
-
-::-webkit-scrollbar {
-    width: 14px;
+.hourly-forecast::-webkit-scrollbar {
+    width: 1rem;
+    height: 1.8rem;
 }
 
-::-webkit-scrollbar-track {
-    background-color: rgba(255, 255, 255, 0);
-    margin-block: .8rem;
+.hourly-forecast::-webkit-scrollbar-track {
+    background-color: #8db8f100;
+    margin-block: 1.2rem;
     border-radius: 100vw;
 }
 
-::-webkit-scrollbar-thumb {
+.hourly-forecast::-webkit-scrollbar-thumb {
     cursor: pointer;
     background-color: #58629b;
     border-radius: 100vw;
+}
+
+/*--------------------------------------------------/**Daily Forecast**/
+
+.daily-forecast {
+    margin-top: 2.2rem;
+    background-color: var(--white-dim);
+    color: var(--main-txt-clr);
+    backdrop-filter: var(--bkg-filter);
+    width: 87.5%;
+    border-radius: 1.2rem;
+    padding: 1.5rem;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    opacity: 0.68;
+    box-shadow: 0 .1rem var(--box-shadow-clr);
+}
+
+.header .calendar {
+    width: 2rem;
+}
+
+.calendar img {
+    width: 100%;
+    filter: invert(86%) sepia(39%) saturate(3418%) hue-rotate(192deg) brightness(107%) contrast(105%);
+}
+
+.header p {
+    font-size: 1.4rem;
+    line-height: 1px;
+}
+
+.days img {
+    width: 4.5rem;
+}
+
+.day {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+    padding: 1.5rem 0 0;
+}
+
+.day:not(:last-child) {
+    box-shadow: 0 .1rem var(--box-shadow-clr-2);
+    padding: 1.5rem 0 1.5rem;
+}
+
+.day>* {
+    display: flex;
+    align-items: center;
+}
+
+.day>*:not(:first-child) {
+    justify-content: center;
+}
+
+.gradient div {
+    background-image: linear-gradient(90deg, rgba(0, 246, 255, 1) 0%, rgba(128, 225, 128, 1) 47%, rgba(255, 204, 0, 1) 100%);
+    height: .6rem;
+    width: 100%;
+    border-radius: .6rem;
+    opacity: .55;
 }
