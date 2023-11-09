@@ -64,7 +64,10 @@ function DOMController() {
         const hourNow = localTime.getHours();
         const upcomingHours = hourlyForecast.data.filter(el => hourlyForecast.data.indexOf(el) >= hourNow);
 
-        if (upcomingHours.length > 12) console.log(true); // Maroje sot
+        while (upcomingHours.length > 12) {
+            upcomingHours.pop();
+        }
+
         if (upcomingHours.length < 12) {
             let missingHours = 12 - upcomingHours.length;
             for (let i = 0; i < missingHours; i++) {
@@ -72,9 +75,6 @@ function DOMController() {
             }
         }
 
-        console.log(hourlyForecast)
-        console.log(nextDayHourlyForecast)
-        console.log(hourNow);
         console.log(upcomingHours)
     }
 }
