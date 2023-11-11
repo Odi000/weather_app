@@ -7,7 +7,7 @@ class WeatherApi {
         this.search = async function (place) {
             try {
                 const response = await fetch(
-                    `http://api.weatherapi.com/v1/forecast.json?key=d3effd02421b4d96a9d100840231309&q=${place}&days=3&aqi=no&alerts=no`, {
+                    `https://api.weatherapi.com/v1/forecast.json?key=d3effd02421b4d96a9d100840231309&q=${place}&days=3&aqi=no&alerts=no`, {
                     mode: 'cors'
                 });
                 const parsedData = await response.json();
