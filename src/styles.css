@@ -42,7 +42,6 @@ body {
 }
 
 #content {
-    width: 70%;
     max-width: 50rem;
     margin: 0 auto;
     display: flex;
@@ -145,6 +144,7 @@ h1 {
 .hourly-forecast {
     user-select: none;
     display: flex;
+    column-gap: .6rem;
     color: var(--main-txt-clr);
     text-align: center;
     background-color: var(--white-dim);
@@ -155,6 +155,10 @@ h1 {
     width: 87.5%;
     overflow: auto;
 }
+
+/* .hourly-forecast> *+*{
+    margin-left: 1.2rem;
+} */
 
 p {
     font-size: 1.8rem;
